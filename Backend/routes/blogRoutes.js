@@ -9,13 +9,9 @@ blogRouter.post("/createBlog", authMiddleware, async (req, res) => {
   try {
     const { title, content, tags } = req.body;
     // Basic validation
-    if (
-      !title ||
-      !content ||
-      !tags ||
-      !Array.isArray(tags) ||
-      tags.length === 0
-    ) {
+    console.log(title, content, tags);
+
+    if (!title || !content || !tags) {
       return res.status(400).json({
         message:
           "Please fill in all fields: title, content, and at least one tag.",
