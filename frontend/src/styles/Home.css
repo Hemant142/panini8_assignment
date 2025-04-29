@@ -1,0 +1,332 @@
+/* Home.css */
+
+.home-container {
+  padding: 2rem;
+  background: #f9fafc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #27ae60;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* FILTER BUTTONS */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 0.9rem;
+  background: #fff;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-buttons button:hover {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+.filter-buttons button.active {
+  background-color: #27ae60;
+  color: white;
+}
+
+/* BLOG CARD LIST */
+.blog-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.blog-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+/* CARD HEADER */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  background-color: #27ae60;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.title-info {
+  flex-grow: 1;
+}
+
+.title-info h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.title-info .tag {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.2s;
+}
+
+.actions button:hover {
+  color: #27ae60;
+}
+
+/* CARD CONTENT */
+.card-content p {
+  margin-top: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #27ae60;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* EDIT FORM */
+.edit-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.edit-form input,
+.edit-form textarea,
+.edit-form select {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.edit-form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.3rem;
+}
+
+.edit-form button:nth-child(5) {
+  background-color: #999;
+}
+
+/* FOOTER */
+.card-footer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.card-footer button {
+  background: none;
+  border: none;
+  color: #27ae60;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card-footer button:hover {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+/* COMMENT BOX */
+.comment-box {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-box input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.comment-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.comment-actions .cancel-btn {
+  background-color: #999;
+}
+
+.cancel-btn:hover {
+  background-color: #706f6f;
+  color: #fff;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .filter-buttons {
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0.3rem;
+    justify-content: flex-start;
+  }
+
+  .filter-buttons button {
+    padding: 0.45rem 0.6rem; /* increased top & bottom padding slightly */
+    font-size: 0.75rem;
+
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-width: 70px;
+    max-width: 120px;
+    text-align: center;
+  }
+
+  .blog-list {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .title-info h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.7rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  .blog-list {
+    grid-template-columns: 1fr;
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+  }
+
+  .edit-form input,
+  .edit-form textarea,
+  .edit-form select {
+    font-size: 0.9rem;
+  }
+
+  .edit-form button {
+    font-size: 0.9rem;
+  }
+
+  .comment-box input {
+    font-size: 0.9rem;
+  }
+
+  .comment-actions button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.comment-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comment-item {
+  background: white;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #e2e2e2;
+  font-size: 0.95rem;
+}
+
+.comment-user {
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
